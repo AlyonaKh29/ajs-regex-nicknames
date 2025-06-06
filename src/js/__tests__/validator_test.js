@@ -19,17 +19,17 @@ describe ('Test for the Validator class', () => {
         { name: 'Ya#yana', validity: false }
     ];
 
-    test.each(validNames)('create an instance with valid name %s', 
+    test.each(validNames)('valid name %s', 
         ({ name, validity }) => {
             const result = Validator.validateUsername(name);
             expect(result).toBe(validity);
         }
-    )
+    );
 
-    test.each(invalidNames)('create an instance with invalid name %s', 
+    test.each(invalidNames)('invalid name %s', 
         ({ name, validity }) => {
             const result = Validator.validateUsername(name);
             expect(result).toBe(validity);
         }
-    )
-})
+    );
+});
